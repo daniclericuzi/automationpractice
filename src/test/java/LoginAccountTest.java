@@ -16,20 +16,20 @@ import org.openqa.selenium.support.ui.Select;
 
 public class LoginAccountTest extends BaseTest {
 	
+	// Testa o Login em uma conta existente
+	
 	@Test
 	public void testCheckUserLogin_UserSignedInSuccessfully () {
 		
 		HomePage homePage = new HomePage(driver);
 		homePage.goToSignIn();
 		
-		//driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-		
 		CreateUserPage createUserPage = new CreateUserPage(driver);
 		createUserPage.loginAccount("camilatorres19876@hotmail.com", "123456");
 		
-		assertTrue(createUserPage.createdUser("Camila", "Torres"));
+		MyAccountPage myAccountPage = new MyAccountPage(driver);
+		assertTrue(myAccountPage.createdUser("Camila", "Torres"));
 		
 	}
 	
-
 }

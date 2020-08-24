@@ -41,11 +41,5 @@ public class AccountPage {
 	buttonRegister.click();
 	
 	}
-	
-	//public boolean createdUser(String name, String surname) {
-	//	return driver.getPageSource().contains(name) && 
-	//			driver.getPageSource().contains(surname);
-	//}
-
 
 }
