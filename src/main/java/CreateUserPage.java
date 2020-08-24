@@ -20,4 +20,20 @@ public class CreateUserPage {
 	
 	}
 	
+	public void loginAccount (String email, String password) {
+		WebElement createdEmail = driver.findElement(By.id("email"));
+		WebElement createdPassword = driver.findElement(By.id("passwd"));
+		WebElement buttonSignIn = driver.findElement(By.id("SubmitLogin"));
+		
+		createdEmail.sendKeys(email);
+		createdPassword.sendKeys(password);
+		buttonSignIn.click();
+		
+	}
+	
+	public boolean createdUser(String name, String surname) {
+		return driver.getPageSource().contains(name) && 
+				driver.getPageSource().contains(surname);
+	
+	}
 }

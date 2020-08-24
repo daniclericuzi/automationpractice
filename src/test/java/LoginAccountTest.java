@@ -1,3 +1,4 @@
+
 import static org.junit.Assert.assertTrue;
 
 import java.util.concurrent.TimeUnit;
@@ -13,30 +14,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class UsuarioSystemTest extends BaseTest {
+public class LoginAccountTest extends BaseTest {
 	
-		
 	@Test
-	public void testCreateNewUser_userCreatedSuccessfully() {
+	public void testCheckUserLogin_UserSignedInSuccessfully () {
 		
 		HomePage homePage = new HomePage(driver);
 		homePage.goToSignIn();
 		
-		CreateUserPage createUserPage = new CreateUserPage(driver);
-		createUserPage.createAccount("camilatorres19876@hotmail.com");
-	
-		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		
-		AccountPage accountPage = new AccountPage(driver);
-		accountPage.createNewAccount("Camila", "Torres", "123456", "Sunshine", "San Francisco", "94016", "5", "9852475");
-
+		CreateUserPage createUserPage = new CreateUserPage(driver);
+		createUserPage.loginAccount("camilatorres19876@hotmail.com", "123456");
+		
 		assertTrue(createUserPage.createdUser("Camila", "Torres"));
+		
 	}
 	
-	@After
-    public void encerra() {
-        driver.close();
-    }
-	
-}
 
+}

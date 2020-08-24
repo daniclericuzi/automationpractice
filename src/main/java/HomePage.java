@@ -1,3 +1,5 @@
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,9 +13,10 @@ public WebDriver driver;
 	
 	}
 	public void goToSignIn() {
+		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		WebElement signIn = driver.findElement(By.className("login"));
 		
-		signIn.submit();
+		signIn.click();
 	}
 		
 	

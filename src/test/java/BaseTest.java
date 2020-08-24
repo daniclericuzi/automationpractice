@@ -15,14 +15,14 @@ public class BaseTest {
 	public static void openBrowser() {
 		System.setProperty("webdriver.gecko.driver", "C:\\FireFoxDriver\\geckodriver.exe");
 		driver = new FirefoxDriver();
-		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		driver.get("http://automationpractice.com/index.php");
 		
 	}
 	
-	@AfterAll
-	public static void closeBrowser() {
-		driver.quit();
-	}
+	//@AfterAll
+	//public static void closeBrowser() {
+	//driver.quit();
+	//}
 }
 
